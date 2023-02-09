@@ -30,5 +30,27 @@ export const actions: Actions = {
         return {
             status: 201,
         }
+    },
+    deleteArticle: async ({ url }) => {
+        const id = url.searchParams.get('id');
+        if (!id) {
+            return fail(400, { message: 'invalid request' })
+        };
+
+        try {
+            await prisma.article.delete({
+                where: {
+                    id: Number(id)
+                }
+            });
+        } catch (error) {
+            console.error('delete article:', error);
+            return fail(500, { message: 'cant delete article' })
+        }
+
+
+        return {
+            status: 200
+        }
     }
 };
