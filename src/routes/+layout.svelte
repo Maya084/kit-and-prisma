@@ -1,3 +1,7 @@
+<script>
+	import '../style.css';
+</script>
+
 <div class="app-layout">
 	<aside>
 		<nav>
