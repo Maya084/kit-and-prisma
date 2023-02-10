@@ -17,7 +17,7 @@
 				<form action="?/deleteArticle&id={article.id}" method="POST">
 					<button class="outline secondary"> Delete article </button>
 				</form>
-				<a href="/" role="button" class="outline constrast" style="width: 100%"> Edit article</a>
+				<a href="/{article.id}" role="button" class="outline constrast" style="width: 100%"> Edit article</a>
 			</article>
 		{/each}
 	</div>
